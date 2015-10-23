@@ -34,6 +34,12 @@ module.exports = function(app) {
 				, usuario = req.sesssion.usuario;
 			usuario.contatos[req.params.id] = contato;
 			res.redirect('/contatos');
+		},
+		destroy: function(req, res) {
+			var usuario = req.session.usuario
+				, id = req.params.id;
+			usuario.contatos.splice(id, 1);
+			res.redirect('/contatos');
 		}
 	}
 	return ContatoController;
