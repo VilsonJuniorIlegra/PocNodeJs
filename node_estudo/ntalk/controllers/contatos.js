@@ -28,6 +28,12 @@ module.exports = function(app) {
 							, contato: contato
 							, id: id};
 			res.render('contatos/edit', params);
+		},
+		update: function(req, res) {
+			var contato = req.body.contato
+				, usuario = req.sesssion.usuario;
+			usuario.contatos[req.params.id] = contato;
+			res.redirect('/contatos');
 		}
 	}
 	return ContatoController;
