@@ -1,9 +1,10 @@
 var express = require('express')
- , load = require('express-load')
- , bodyParser = require('body-parser')
- , cookieParser = require('cookie-parser')
- , session = require('express-session')
- , app = express();
+    , load = require('express-load')
+    , bodyParser = require('body-parser')
+    , cookieParser = require('cookie-parser')
+    , session = require('express-session')
+    , methodOverride = require('method-override')
+    , app = express();
 //     , routes = require('./routes');
 
 app.set('views', __dirname + '/views');
@@ -13,7 +14,7 @@ app.use(session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(methodOverride());
-aap.use(app.router);
+//app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 
 //app.get('/', routes.index);

@@ -31,7 +31,7 @@ module.exports = function(app) {
 		},
 		update: function(req, res) {
 			var contato = req.body.contato
-				, usuario = req.sesssion.usuario;
+				, usuario = req.session.usuario;
 			usuario.contatos[req.params.id] = contato;
 			res.redirect('/contatos');
 		},
