@@ -12,6 +12,8 @@ app.use(cookieParser('ntalk'));
 app.use(session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(methodOverride());
+aap.use(app.router);
 app.use(express.static(__dirname + '/public'));
 
 //app.get('/', routes.index);
